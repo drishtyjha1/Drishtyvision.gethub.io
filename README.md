@@ -1,5 +1,122 @@
 # Drishtyvision.gethub.io😊
-on.xml by the following code. This drawable resource is used to decorate the buttons of the calculator. There are two gradient shapes in this code; one is for button pressed state and another for the normal state.
+This tutorial guide you to develop a basic Calculator Android application in Android Studio.
+NOTE: There is a new article written on How to develop an Android calculator application using Kotlin: Android: Simple Calculator in Kotlin. The new article is the Kotlin version of this article. If you like to start with Kotlin, the recent article is recommended for you.
+
+Step 1: Create a new Android application project with an application name: “Calculator” and package name: “com.javahelps.calculator”.
+
+Step 2: By default, Android uses a green Android robot icon. In this project, we are going to use a custom application icon. Therefore, delete the default ic_launcher icon set from the “mipmap” folder.
+
+[<img src ="https://2.bp.blogspot.com/-nS7KHRsBthE/VPRwZvflriI/AAAAAAAACJA/afGOXBVJis0/s1600/Simple%2BCalculator%2Bin%2BAndroid%2B1.png">]
+
+Step 3: Get any PNG image file for the application icon. (It is recommended to have a minimum size 256x256 pixels). This icon is used to display in the Google Play as well as in the applications menu of Android devices.
+
+Step 4: Right click on the “mipmap” folder and select New → Image Asset <img src ="https://1.bp.blogspot.com/-CqNd6EjqXXg/VPRw44eMUII/AAAAAAAACJI/ekLeapdokuY/s1600/Simple%2BCalculator%2Bin%2BAndroid%2B2.png">
+
+Step 5: Browse and select your icon as the image file and click on Next → Finish buttons. (Make sure that the resource name is: ic_launcher)
+
+<img src="https://4.bp.blogspot.com/-IgNcK4y04PQ/VPRxKbkSX4I/AAAAAAAACJQ/U3APAPGrBh8/s1600/Simple%2BCalculator%2Bin%2BAndroid%2B3.png">
+
+Step 6: Replace the content of the activity_main.xml file by the following code. This code creates a TextView as the calculator number screen and some necessary buttons. TextView is used instead of EditText, in order to prevent manual user input using the default keypad of Android. In this code, some common properties of Buttons are not provided to reduce the length of this tutorial. In your code make sure that you have included these four attributes for all the Buttons. android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:textSize="30sp" Copy
+
+<TextView
+    android:id="@+id/txtScreen"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:gravity="right|center_vertical"
+    android:maxLength="16"
+    android:padding="10dp"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:textSize="30sp"
+    android:typeface="serif" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/txtScreen"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/btnSeven"
+            android:text="7" />
+        <Button
+            android:id="@+id/btnEight"
+            android:text="8" />
+        <Button
+            android:id="@+id/btnNine"
+            android:text="9"/>
+        <Button
+            android:id="@+id/btnDivide"
+            android:text="/"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/btnFour"
+            android:text="4"/>
+        <Button
+            android:id="@+id/btnFive"
+            android:text="5" />
+        <Button
+            android:id="@+id/btnSix"
+            android:text="6" />
+        <Button
+            android:id="@+id/btnMultiply"
+            android:text="*" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/btnOne"
+            android:text="1" />
+        <Button
+            android:id="@+id/btnTwo"
+            android:text="2" />
+        <Button
+            android:id="@+id/btnThree"
+            android:text="3" />
+        <Button
+            android:id="@+id/btnSubtract"
+            android:text="-" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/btnDot"
+            android:text="." />
+        <Button
+            android:id="@+id/btnZero"
+            android:text="0" />
+        <Button
+            android:id="@+id/btnClear"
+            android:text="C" />
+        <Button
+            android:id="@+id/btnAdd"
+            android:text="+" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnEqual"
+        android:text="=" />
+</LinearLayout>
+Copy Step 7: Right click on the “drawable” folder and select New → Drawable resource file. ![](https://3.bp.blogspot.com/-jVJppOgokwk/VPRxS3tnTnI/AAAAAAAACJY/wVd5L0Lis44/s1600/Simple%2BCalculator%2Bin%2BAndroid%2B5.png)
+Step 8: Create a drawable file with a name button. [<img src ="https://1.bp.blogspot.com/-1aB3w0b2JtI/VPRxgzx3ZkI/AAAAAAAACJg/jcrX146cREM/s1600/Simple%2BCalculator%2Bin%2BAndroid%2B6.png">]
+
+Step 9: Replace the content of button.xml by the following code. This drawable resource is used to decorate the buttons of the calculator. There are two gradient shapes in this code; one is for button pressed state and another for the normal state.
 
 Copy
 Step 10: For all the buttons in the activity_main.xml, add a property “android:background”. android:background="@drawable/button" Copy After the modification, activity_main.xml must be like this.
